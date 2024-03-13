@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<div class="content-section">
+    <form action="" method="post">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Delete Post</legend>
+      <h4>Hey, do you  wana delete this blog post <b>"{{object.title}}"</b></h4>
+        </fieldset>
+
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Delete</button>
+        </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">No,I don't want delete the blog post today <a href="{% url 'blog-home' %}">Go Back</a></small>
+    </div>
+</div>
+
+{% endblock content %}

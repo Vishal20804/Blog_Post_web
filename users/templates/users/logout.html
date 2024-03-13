@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+
+<div class="content-section">
+    <form action="{% url 'user_logout' %}" method="post">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Hey</legend>
+           <h4>You just logged Out</h4>
+        </fieldset>
+
+        <div class="form-group">
+            <small class="btn btn-outline-info" >For Login or Register tab above button </small>
+        </div>
+    </form>
+   
+</div>
+
+{% endblock content %}
